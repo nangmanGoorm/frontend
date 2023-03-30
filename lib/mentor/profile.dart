@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:goorm/mentor/home.dart';
+import 'package:goorm/mentor/white_mentor_navigation.dart';
 
 import '../consts/button_style.dart';
 import '../consts/colors.dart';
@@ -36,30 +38,9 @@ class _ProfileState extends State<Profile> {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                radius: 30,
-                backgroundColor: Colors.grey,
-              ),
-              SizedBox(height: 16), // 닉네임과 본인설명 사이 간격
-              Text(
-                "게하 총총", // 닉네임
-                style: MyTextStyle.CbS18W700
-              ),
-              SizedBox(height: 8), // 닉네임과 본인설명 사이 간격
-              Text(
-                "'성산토박이'게하 운영 10년 경험있습니다.\n현실적이고 재미있게, 게하 멘토링 해드려요~", // 본인설명
-                style: MyTextStyle.CbS18W700
-              ),
-            ],
-          ),
-        ),
+        child: SvgPicture.asset('assets/images/profile2.svg')
       ),
+      bottomNavigationBar: WhiteMentorMyBottomNavigationBar(),
     );
   }
 }

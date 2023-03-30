@@ -9,10 +9,10 @@ class Bottle {
 
   static String categoryNumToString(int categoryNum) {
     List<String> categoryString = [
-      '농사',
-      '어업',
-      '카페&베이커리',
-      '숙박업',
+      '제주샌애기',
+      '신애라',
+      '내꿈은 제주시장',
+      '이두산(애월게하)',
       '식당',
       '편집샵',
       '프리랜서',

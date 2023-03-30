@@ -87,6 +87,12 @@ flutter:
     - assets/images/wave.svg
     - assets/images/IconFish.png
     - assets/images/defaulfImg.png
+    - assets/images/profile2.svg
+    - assets/images/profile.svg
+    - assets/images/Navigation.svg
+    - assets/images/IconBottle.png
+    - assets/images/IconChat.png
+    - assets/images/IconProfile.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -16,10 +16,10 @@ class MentorMyBottomNavigationBar extends StatefulWidget {
 class _MentorMyBottomNavigationBarState extends State<MentorMyBottomNavigationBar> {
   int index = 0;
   List<String> labelsList = ['나의바다', '채팅', '프로필'];
-  List<IconData> iconsList = [
-    Icons.speaker,
-    Icons.home,
-    Icons.chat,
+  List<AssetImage> iconsList = [
+    AssetImage('assets/images/IconBottle.png'),
+    AssetImage('assets/images/IconChat.png'),
+    AssetImage('assets/images/IconProfile.png'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _MentorMyBottomNavigationBarState extends State<MentorMyBottomNavigationBa
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
-                  child: Icon(
+                  child: ImageIcon(
                     iconsList[i],
                     color: MyColors.white,
                   ),
@@ -49,7 +49,7 @@ class _MentorMyBottomNavigationBarState extends State<MentorMyBottomNavigationBa
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
-                  child: Icon(
+                  child: ImageIcon(
                     iconsList[i],
                     color: MyColors.unselectedColor,
                   ),
