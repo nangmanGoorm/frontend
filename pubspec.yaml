@@ -28,7 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-#  firebase_core: ^2.8.0
+  #  firebase_core: ^2.8.0
   flutter:
     sdk: flutter
 
@@ -38,9 +38,8 @@ dependencies:
 
   socket_io_client: ^2.0.1
   flutter_svg: ^2.0.4
-  # get: 4.6.5
-#  firebase_messaging: ^14.3.0
-#  flutter_local_notifications: ^13.0.0
+  firebase_messaging: ^14.3.0
+  flutter_local_notifications: ^13.0.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +70,8 @@ flutter:
     - assets/images/BGdriftbottle.jpg
     - assets/images/drift_bottle.svg
     - assets/images/BGdriftbottle_with_bottle.svg
+    - assets/images/selected_request.svg
+    - assets/images/unselected_request.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

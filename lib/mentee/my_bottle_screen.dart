@@ -7,27 +7,29 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
-import 'package:goorm/mentee/help_more_detail_screen.dart';
 
-class CategorySelectScreen extends StatefulWidget {
-  const CategorySelectScreen({super.key});
+class MyBottleScreen extends StatefulWidget {
+  const MyBottleScreen({super.key});
 
   @override
-  State<CategorySelectScreen> createState() => _CategorySelectScreenState();
+  State<MyBottleScreen> createState() => _MyBottleScreenState();
 }
 
-class _CategorySelectScreenState extends State<CategorySelectScreen> {
-  num? selectedCategory;
+class _MyBottleScreenState extends State<MyBottleScreen> {
+  num? selectedHelpeRequest;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back_ios_rounded,
-            color: MyColors.white,
-          ),
-          backgroundColor: Colors.transparent),
+        centerTitle: true,
+        title: Text('보낸 도움요청', style: MyTextStyle.CwS18W700),
+        leading: Icon(
+          Icons.arrow_back_ios_rounded,
+          color: MyColors.white,
+        ),
+        backgroundColor: Colors.transparent,
+      ),
       body: Stack(
         children: [
           Positioned.fill(
@@ -51,24 +53,15 @@ class _CategorySelectScreenState extends State<CategorySelectScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 68),
-                _titleText(),
-                const SizedBox(height: 38),
+                const SizedBox(height: 88),
                 _selectButtons(),
-                const Spacer(),
-                _nextButton()
+                // const Spacer(),
+                // _nextButton()
               ],
             ),
           ),
         ],
       ),
-    );
-  }
-
-  Widget _titleText() {
-    return Text(
-      '어떤 도움이\n필요하신가요?',
-      style: MyTextStyle.CwS28W700,
     );
   }
 
@@ -91,17 +84,17 @@ class _CategorySelectScreenState extends State<CategorySelectScreen> {
         padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 2, // Two boxes in a row
-        childAspectRatio: 154 / 80,
+        childAspectRatio: 154 / 126,
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
         children: List.generate(8, (index) {
           return TextButton(
-            style: selectedCategory == index
+            style: selectedHelpeRequest == index
                 ? MyButtonStyle.categorySelectedButton
                 : MyButtonStyle.categoryUnselectedButton,
             onPressed: () {
               setState(() {
-                selectedCategory = index;
+                selectedHelpeRequest = index;
               });
             },
             child: Container(
@@ -110,10 +103,7 @@ class _CategorySelectScreenState extends State<CategorySelectScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.home,
-                    color: MyColors.white,
-                  ),
+                  // Image.asset('assets/images/selected_request.svg'),
                   Text(
                     categoryList[index],
                     style: MyTextStyle.CwS16W600,
@@ -123,27 +113,6 @@ class _CategorySelectScreenState extends State<CategorySelectScreen> {
             ),
           );
         }),
-      ),
-    );
-  }
-
-  Widget _nextButton() {
-    return SizedBox(
-      width: double.infinity,
-      height: 54,
-      child: TextButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const HelpMoreDetailScreen()),
-          );
-        },
-        style: MyButtonStyle.nextButtonStyle,
-        child: Text(
-          '다음으로',
-          style: MyTextStyle.CwS18W700,
-        ),
       ),
     );
   }

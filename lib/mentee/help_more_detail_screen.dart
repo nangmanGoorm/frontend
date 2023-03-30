@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
+import 'package:goorm/mentee/send_draft_screen.dart';
 
 class HelpMoreDetailScreen extends StatefulWidget {
   const HelpMoreDetailScreen({super.key});
@@ -51,9 +52,9 @@ class _HelpMoreDetailScreen extends State<HelpMoreDetailScreen> {
                 const SizedBox(height: 68),
                 _titleText(),
                 const SizedBox(height: 38),
-                TextFormField(),
+                _textFormField(),
                 const Spacer(),
-                _nextButton()
+                _nextButton(),
               ],
             ),
           ),
@@ -75,17 +76,31 @@ class _HelpMoreDetailScreen extends State<HelpMoreDetailScreen> {
       height: 54,
       child: TextButton(
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //       builder: (context) => const UserTypeSelectScreen()),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const SendDraftScreen()),
+          );
         },
         style: MyButtonStyle.nextButtonStyle,
         child: Text(
           '도움 요청하기',
           style: MyTextStyle.CwS18W700,
         ),
+      ),
+    );
+  }
+
+  Widget _textFormField() {
+    return SizedBox(
+      width: 320,
+      height: 142,
+      child: TextFormField(
+        keyboardType: TextInputType.multiline,
+        maxLines: 10,
+        decoration: const InputDecoration(
+          hintText: '예) 안녕하세요 제주살이 새내기입니다. 시작할 때 어떤 것부터 시작할지 잘 모르겠어요.',
+        ),
+        style: MyTextStyle.CwS16W500,
       ),
     );
   }

@@ -29,6 +29,15 @@ class MyButtonStyle {
     ),
   );
 
+  static ButtonStyle categoryUnselectedButton = ButtonStyle(
+    shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+        side: BorderSide(width: 1, color: MyColors.white),
+      ),
+    ),
+  );
+
   static ButtonStyle categorySelectedButton = ButtonStyle(
     shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
       RoundedRectangleBorder(
@@ -36,6 +45,7 @@ class MyButtonStyle {
         side: BorderSide(width: 1, color: MyColors.white),
       ),
     ),
+    backgroundColor: MaterialStatePropertyAll(Colors.white.withOpacity(0.2)),
   );
 
   static ButtonStyle whiteBorder12 = ButtonStyle(

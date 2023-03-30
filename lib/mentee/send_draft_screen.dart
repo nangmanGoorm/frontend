@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/text_style.dart';
-import 'package:goorm/mentee/category_select_screen.dart';
 import 'package:goorm/mentee/my_bottle_screen.dart';
 import 'package:goorm/widgets/bottom_navigation_bar.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class SeaBottleScreen extends StatefulWidget {
-  const SeaBottleScreen({super.key});
+class SendDraftScreen extends StatefulWidget {
+  const SendDraftScreen({super.key});
 
   @override
-  State<SeaBottleScreen> createState() => _SeaBottleScreenState();
+  State<SendDraftScreen> createState() => _SendDraftScreenState();
 }
 
-class _SeaBottleScreenState extends State<SeaBottleScreen> {
+class _SendDraftScreenState extends State<SendDraftScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +30,7 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
             left: 96,
             bottom: 242,
             child: TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const CategorySelectScreen()),
-                );
-              },
+              onPressed: () {},
               child: SvgPicture.asset('assets/images/drift_bottle.svg'),
             ),
           ),
@@ -46,13 +41,13 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(height: 30),
+                const SizedBox(height: 40),
                 _titleText(),
                 const SizedBox(height: 230),
                 _middleText(),
-                const SizedBox(height: 306),
+                const Spacer(),
                 _showMyBottleListButton(),
-                const SizedBox(height: 40),
+                const SizedBox(height: 14),
                 const MyBottomNavigationBar()
               ],
             ),
@@ -64,15 +59,14 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
 
   Widget _titleText() {
     return Text(
-      '도움 요청하기',
+      '나의 바다',
       style: MyTextStyle.CwS18W700,
     );
   }
 
   Widget _middleText() {
     return Text(
-      '해류병을 눌러서\n도움을 요청해보세요',
-      textAlign: TextAlign.center,
+      '(닉네임)님을 도와줄\n해류병을 잘 보냈어요!',
       style: MyTextStyle.CwS18W700,
     );
   }

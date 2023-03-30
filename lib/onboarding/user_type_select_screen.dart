@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/text_style.dart';
 import 'package:goorm/mentee/sea_bottle_screen.dart';
+import 'package:goorm/mentor/help.dart';
+import 'package:goorm/mentor/home.dart';
 import 'package:goorm/widgets/next_button.dart';
 
 class UserTypeSelectScreen extends StatefulWidget {
@@ -98,9 +100,8 @@ class UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => isMentee!
-                    ? const SeaBottleScreen()
-                    : const SeaBottleScreen(),
+                builder: (context) =>
+                    isMentee! ? Help() : const SeaBottleScreen(),
               ),
             );
           }

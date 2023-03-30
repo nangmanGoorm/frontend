@@ -32,13 +32,19 @@ class MyTextStyle {
     color: MyColors.white,
     fontSize: 18,
     fontWeight: FontWeight.w700,
-    height: 1.2,
+    height: 1.7,
   );
 
   static TextStyle CwS16W600 = TextStyle(
     color: MyColors.white,
     fontSize: 16,
     fontWeight: FontWeight.w600,
+    height: 1.2,
+  );
+  static TextStyle CwS16W500 = TextStyle(
+    color: MyColors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
     height: 1.2,
   );
 
@@ -74,6 +80,14 @@ class MyTextStyle {
     color: MyColors.gray700,
     fontSize: 18,
     fontWeight: FontWeight.w700,
+    height: 1.2,
+  );
+
+  //gray
+  static TextStyle CgS16W500 = TextStyle(
+    color: MyColors.gray500,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
     height: 1.2,
   );
 }
