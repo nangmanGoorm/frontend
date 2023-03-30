@@ -43,22 +43,22 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.transparent),
       body: Stack(
         children: [
-          Positioned.fill(
-            child: SvgPicture.asset(
-              'assets/images/BGdriftbottle_with_bottle.svg',
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Container(
-                color: const Color(0xff1A1A1B).withOpacity(0.64),
-                alignment: Alignment.center,
-                child: const Text(''),
-              ),
-            ),
-          ),
+          // Positioned.fill(
+          //   child: SvgPicture.asset(
+          //     'assets/images/BGdriftbottle_with_bottle.svg',
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
+          // ClipRRect(
+          //   child: BackdropFilter(
+          //     filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          //     child: Container(
+          //       color: const Color(0xff1A1A1B).withOpacity(0.64),
+          //       alignment: Alignment.center,
+          //       child: const Text(''),
+          //     ),
+          //   ),
+          // ),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
   Widget _titleText() {
     return Text(
       '어떤일을\n하고계신가요?',
-      style: MyTextStyle.CwS28W700,
+      style: MyTextStyle.CbS28W700,
     );
   }
 
@@ -97,6 +97,16 @@ class _HomeState extends State<Home> {
       '편집샵',
       '프리랜서',
       '유통업'
+    ];
+    List<AssetImage> categoryImage = [
+      AssetImage('assets/images/IconFarm.png'),
+      AssetImage('assets/images/IconFish.png'),
+      AssetImage('assets/images/IconCafe.png'),
+      AssetImage('assets/images/IconHouse.png'),
+      AssetImage('assets/images/IconRestaurant.png'),
+      AssetImage('assets/images/IconSelectshop.png'),
+      AssetImage('assets/images/IconFreelancer.png'),
+      AssetImage('assets/images/IconDistribution.png'),
     ];
     return Container(
       width: double.maxFinite,
@@ -112,8 +122,8 @@ class _HomeState extends State<Home> {
         children: List.generate(8, (index) {
           return TextButton(
             style: selectedCategory == index
-                ? MyButtonStyle.categorySelectedButton
-                : MyButtonStyle.categoryUnselectedButton,
+                ? MyButtonStyle.jobSelectButtonEnabled
+                : MyButtonStyle.jobUnSelectButtonEnabled,
             onPressed: () {
               setState(() {
                 selectedCategory = index;
@@ -125,13 +135,13 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.home,
-                    color: MyColors.white,
+                  ImageIcon(
+                    categoryImage[index],
+                    color: MyColors.black,
                   ),
                   Text(
                     categoryList[index],
-                    style: MyTextStyle.CwS16W600,
+                    style: MyTextStyle.CbS16W600,
                   )
                 ],
               ),

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
+import 'package:goorm/mentor/mentor_sea_bottle_screen.dart';
+import 'package:goorm/mentor/profile.dart';
+
+import '../mentee/chatting_screen.dart';
 
 class MentorMyBottomNavigationBar extends StatefulWidget {
   const MentorMyBottomNavigationBar({super.key});
@@ -66,6 +70,31 @@ class _MentorMyBottomNavigationBarState extends State<MentorMyBottomNavigationBa
               index = i;
               print(index);
             });
+            switch (index) {
+              case 0:
+              // 나의바다 화면으로 이동
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MentorSeaBottleScreen()),
+                );
+                break;
+              case 1:
+              // 채팅 화면으로 이동
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
+                break;
+              case 2:
+              // 프로필 화면으로 이동
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChattingScreen()),
+                );
+                break;
+              default:
+                break;
+            }
           },
         ),
       ),

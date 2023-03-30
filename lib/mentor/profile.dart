@@ -1,49 +1,54 @@
-// import 'package:flutter/material.dart';
-// import 'package:goorm/mentor/home.dart';
+import 'package:flutter/material.dart';
+import 'package:goorm/mentor/home.dart';
+
+import '../consts/button_style.dart';
+import '../consts/text_style.dart';
+import '../mentee/my_bottle_screen.dart';
+import 'mentor_bottom_navigation.dart';
+
 //
 //
-// class Profile extends StatelessWidget {
-//   const Profile({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         Container(
-//           child: Column(
-//             children: [
-//               Container(
-//                 margin: EdgeInsets.only(left: 10),
-//                 alignment: Alignment.centerLeft,
-//                 child: CircleAvatar(
-//                   radius: 20, // 반지름 크기
-//                   backgroundColor: Colors.grey, // 배경색
-//                   child: Icon(Icons.person,
-//                       size: 30,
-//                       color: Colors.white), // 프로필 아이콘
-//                 ),
-//               ),
-//               Container(child: Text("홍길동"),),
-//               Container(child: Text("애월의 아름다운 해변가에서 \n 카페를 운영하고 있는 홍길동 이라고 합니다."),)
-//
-//             ],
-//           ),
-//         ),
-//         Container(
-//           child: Column(children: const [
-//             Text("대표 서비스"),
-//             Text("카페&베이커리")
-//           ],),
-//         ),
-//         Container(child: Column(children: const [
-//           Text("활동 지역"),
-//           Text("애월")
-//         ],),),
-//
-//       ],
-//     );
-//   }
-// }
+
+class Profile extends StatefulWidget {
+  const Profile({Key? key}) : super(key: key);
+
+  @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My App"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.grey,
+            ),
+            SizedBox(height: 16), // 닉네임과 본인설명 사이 간격
+            Text(
+              "Your Nickname", // 닉네임
+              style: MyTextStyle.CbS18W700
+            ),
+            SizedBox(height: 8), // 닉네임과 본인설명 사이 간격
+            Text(
+              "Your Description", // 본인설명
+              style: MyTextStyle.CbS18W700
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 //
 //
 // class ProfileFix extends StatefulWidget {

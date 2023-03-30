@@ -42,22 +42,22 @@ class _RegionState extends State<Region> {
           backgroundColor: Colors.transparent),
       body: Stack(
         children: [
-          Positioned.fill(
-            child: SvgPicture.asset(
-              'assets/images/BGdriftbottle_with_bottle.svg',
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Container(
-                color: const Color(0xff1A1A1B).withOpacity(0.64),
-                alignment: Alignment.center,
-                child: const Text(''),
-              ),
-            ),
-          ),
+          // Positioned.fill(
+          //   child: SvgPicture.asset(
+          //     'assets/images/BGdriftbottle_with_bottle.svg',
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
+          // ClipRRect(
+          //   child: BackdropFilter(
+          //     filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          //     child: Container(
+          //       color: const Color(0xff1A1A1B).withOpacity(0.64),
+          //       alignment: Alignment.center,
+          //       child: const Text(''),
+          //     ),
+          //   ),
+          // ),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -80,18 +80,18 @@ class _RegionState extends State<Region> {
   Widget _titleText() {
     return Text(
       '제주의 어느 지역에서\n활동하시나요?',
-      style: MyTextStyle.CwS28W700,
+      style: MyTextStyle.CbS28W700,
     );
   }
 
   Widget _selectButtons() {
     List<String> categoryList = [
-      '가파도','가파도','가파도',
-      '가파도','가파도','가파도',
-      '가파도','가파도','가파도',
-      '가파도','가파도','가파도',
-      '가파도','가파도','가파도',
-      '가파도','가파도'
+      '가파도','구좌','남원',
+      '대정','마라도','서귀포시',
+      '성산','애월','안덕',
+      '우도','제주시','조천',
+      '중문','추자도','표선',
+      '한경','한림'
     ];
     return Container(
       width: double.maxFinite,
@@ -107,8 +107,8 @@ class _RegionState extends State<Region> {
         children: List.generate(17, (index) {
           return TextButton(
             style: selectedCategory == index
-                ? MyButtonStyle.categorySelectedButton
-                : MyButtonStyle.categoryUnselectedButton,
+                ? MyButtonStyle.jobSelectButtonEnabled
+                : MyButtonStyle.jobUnSelectButtonEnabled,
             onPressed: () {
               setState(() {
                 selectedCategory = index;
@@ -120,7 +120,7 @@ class _RegionState extends State<Region> {
               child:
                   Text(
                     categoryList[index],
-                    style: MyTextStyle.CwS16W600,
+                    style: MyTextStyle.CbS16W600,
                   )
 
               ),
