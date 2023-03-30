@@ -2,19 +2,6 @@
 // import 'package:goorm/mentee/sea_bottle_screen.dart';
 // import 'package:goorm/mentor/mentor_sea_bottle_screen.dart';
 //
-// class HelpHome extends StatefulWidget {
-//   const HelpHome({Key? key}) : super(key: key);
-//
-//   @override
-//   State<HelpHome> createState() => _HelpHomeState();
-// }
-//
-// class _HelpHomeState extends State<HelpHome> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return SeaBottleScreen();
-//   }
-// }
 //
 //
 // class Help extends StatefulWidget {

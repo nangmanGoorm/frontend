@@ -64,6 +64,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/IconFarm.png
+    - assets/images/IconCafe.png
+    - assets/images/IconHouse.png
+    - assets/images/IconRestaurant.png
+    - assets/images/IconSelectshop.png
+    - assets/images/IconFreelancer.png
+    - assets/images/IconDistribution.png
     - assets/images/needHelp.png
     - assets/images/wantToHelp.png
     - assets/images/BGdriftbottle.svg
@@ -74,6 +81,7 @@ flutter:
     - assets/images/unselected_request.svg
     - assets/images/avatar.svg
 
+    - assets/images/defaulfImg.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
