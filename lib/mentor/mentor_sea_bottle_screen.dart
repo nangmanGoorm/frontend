@@ -83,8 +83,7 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
       height: 38,
       child: TextButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (c) => Region()));
+          Navigator.push(context, MaterialPageRoute(builder: (c) => Region()));
         },
         style: MyButtonStyle.whiteBorder12,
         child: Text(

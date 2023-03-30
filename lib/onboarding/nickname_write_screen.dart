@@ -80,6 +80,8 @@ class _NicknameWriteScreenState extends State<NicknameWriteScreen> {
             MaterialPageRoute(
                 builder: (context) => const UserTypeSelectScreen()),
           );
+
+          //TODO: nuikname같이 넘기고
         },
         style: MyButtonStyle.nextButtonStyle,
         child: Text(

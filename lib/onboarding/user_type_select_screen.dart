@@ -100,11 +100,11 @@ class UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
           if (isMentee != null) {
             Navigator.push(
               context,
+              //TODO: nickanem이랑 type 같이 넘기기
+              //TODO: userId 캐시로 저장하고 있기
               MaterialPageRoute(
-                builder: (context) => isMentee!
-                    ? Home()
-                    : const SeaBottleScreen(),
-
+                builder: (context) =>
+                    isMentee! ? Home() : const SeaBottleScreen(),
               ),
             );
           }

@@ -98,4 +98,5 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
       ),
     );
   }
+  //TODO: 해류병 등록(전에 받은 category, user_id, message)
 }

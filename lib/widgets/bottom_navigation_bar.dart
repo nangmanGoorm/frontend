@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
+import 'package:goorm/mentee/my_bottle_screen.dart';
+import 'package:goorm/mentee/home_screen.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   const MyBottomNavigationBar({super.key});
@@ -53,9 +55,11 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 label: labelsList[i],
               ),
           ],
-          backgroundColor: MyColors.blue500,
-          selectedItemColor: MyColors.white,
-          unselectedItemColor: const Color(0xff4D6EE9),
+          backgroundColor: index == 0 ? MyColors.blue500 : MyColors.white,
+          selectedItemColor:
+              index == 0 ? MyColors.white : const Color(0xff4D6EE9),
+          unselectedItemColor:
+              index == 0 ? const Color(0xff4D6EE9) : MyColors.white,
           selectedFontSize: 12,
           unselectedFontSize: 12,
           currentIndex: index,
@@ -65,6 +69,22 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
             setState(() {
               index = i;
             });
+            if (index == 1) {
+              //TODO: 이동하는 페이지 바꿔주기
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
+              );
+            } else if (index == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MyBottleScreen(),
+                ),
+              );
+            }
           },
         ),
       ),
