@@ -118,10 +118,16 @@ class _RegionState extends State<Region> {
               padding: const EdgeInsets.all(12),
               height: 100,
               child:
-                  Text(
-                    categoryList[index],
-                    style: MyTextStyle.CbS16W600,
-                  )
+              selectedCategory == index
+                  ? Text(
+                categoryList[index],
+                style: MyTextStyle.CblueS16W600,
+              )
+                  : Text(
+                categoryList[index],
+                style: MyTextStyle.CbS16W600,
+              )
+
 
               ),
           );

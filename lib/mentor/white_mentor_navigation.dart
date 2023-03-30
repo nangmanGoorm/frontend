@@ -18,7 +18,7 @@ class WhiteMentorMyBottomNavigationBar extends StatefulWidget {
 class _WhiteMentorMyBottomNavigationBarState
     extends State<WhiteMentorMyBottomNavigationBar> {
   int index = 1;
-  List<String> labelsList = ['도움요청', '홈', '채팅'];
+  List<String> labelsList = ['나의바다', '채팅', '프로필'];
   List<AssetImage> iconsList = [
     AssetImage('assets/images/IconBottle.png'),
     AssetImage('assets/images/IconChat.png'),
@@ -97,7 +97,7 @@ class _WhiteMentorMyBottomNavigationBarState
                 builder: (context) => const MentorSeaBottleScreen(),
               ),
             );
-          } else if (index == 2) {
+          } else if (index == 1) {
             Navigator.push(
               context,
               MaterialPageRoute(

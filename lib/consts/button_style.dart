@@ -73,5 +73,12 @@ class MyButtonStyle {
         side: BorderSide(width: 1, color: MyColors.blue500),
       ),
     ),
+    backgroundColor: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
+      if (states.contains(MaterialState.pressed)) {
+        return MyColors.blue50.withOpacity(0.5);
+      } else {
+        return MyColors.blue50;
+      }
+    }),
   );
 }

@@ -12,11 +12,13 @@ class MentorHelpMoreDetailScreen extends StatefulWidget {
   const MentorHelpMoreDetailScreen({super.key});
 
   @override
-  State<MentorHelpMoreDetailScreen> createState() => _MentorHelpMoreDetailScreen();
+  State<MentorHelpMoreDetailScreen> createState() =>
+      _MentorHelpMoreDetailScreen();
 }
 
 class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
   num? selectedCategory;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +74,8 @@ class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
       style: MyTextStyle.CwS28W700,
     );
   }
-  Widget _menti(){
+
+  Widget _menti() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
       width: double.maxFinite,
@@ -85,7 +88,9 @@ class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
             'assets/images/avatar.svg',
             fit: BoxFit.cover,
           ),
-          SizedBox(width: 15,),
+          SizedBox(
+            width: 15,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,9 +100,12 @@ class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
                 style: MyTextStyle.CwS18W700,
               ),
               Container(
-                margin: EdgeInsets.only(top: 1.0,bottom: 1.0),
+                margin: EdgeInsets.only(top: 1.0, bottom: 1.0),
                 padding: EdgeInsets.fromLTRB(10.0, 4.0, 10.0, 4.0),
-                child: Text("숙박업",style: MyTextStyle.jobText,),
+                child: Text(
+                  "숙박업",
+                  style: MyTextStyle.jobText,
+                ),
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.white,
@@ -106,13 +114,9 @@ class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
                   borderRadius: BorderRadius.circular(12.0),
                 ),
               ),
-              Row(
-                children: [
-                  Text(
-                    "2023.3.31",
-                    style: MyTextStyle.CgS12W500,
-                  ),
-                ],
+              Text(
+                "2023.3.31",
+                style: MyTextStyle.CgS12W500,
               ),
               SizedBox(
                 width: 250,
@@ -139,7 +143,8 @@ class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const MentorSendDraftScreen()),
+            MaterialPageRoute(
+                builder: (context) => const MentorSendDraftScreen()),
           );
         },
         style: MyButtonStyle.nextButtonStyle,

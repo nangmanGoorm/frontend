@@ -46,6 +46,11 @@ class _MentorSeaBottleScreenState extends State<MentorSeaBottleScreen> {
               ),
             ),
           ),
+          Positioned(
+            left: 96,
+            bottom: 222,
+            child: SvgPicture.asset('assets/images/wave.svg'),
+          ),
           SizedBox(
             width: double.maxFinite,
             height: double.maxFinite,
