@@ -146,5 +146,17 @@ class MyTextStyle {
     fontWeight: FontWeight.w600,
     height: 1.2,
   );
+  static TextStyle CbS16W700 = TextStyle(
+    color: MyColors.black,
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    height: 1.2,
+  );
 
+  static TextStyle graySmallText = TextStyle(
+    color: MyColors.gray700,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    height: 1.4,
+  );
 }

@@ -80,6 +80,7 @@ flutter:
     - assets/images/selected_request.svg
     - assets/images/unselected_request.svg
     - assets/images/avatar.svg
+    - assets/images/goorm_logo.svg
 
     - assets/images/defaulfImg.png
   # An image asset can refer to one or more resolution-specific "variants", see

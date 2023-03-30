@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
+import 'package:goorm/widgets/bottom_navigation_bar.dart';
+import 'package:goorm/widgets/white_bottom_navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,40 +18,259 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [recentOffer()],
+      backgroundColor: MyColors.gray100,
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 10),
+            headerLogo(),
+            const SizedBox(height: 20),
+            recentOffer(),
+            const SizedBox(height: 20),
+            jejuSeniors(),
+            const Spacer(),
+            Container(
+              width: double.maxFinite,
+              alignment: Alignment.center,
+              child: const WhiteMyBottomNavigationBar(),
+            )
+          ],
+        ),
       ),
     );
+  }
+
+  Widget headerLogo() {
+    return SvgPicture.asset('assets/images/goorm_logo.svg');
   }
 
   Widget recentOffer() {
     return Container(
       padding: const EdgeInsets.all(20),
-      child: Column(children: [
-        Text(
-          '🤙🏻 최근 받은 제안',
-          style: MyTextStyle.CbS18W500,
-        ),
-        Column(
-          children: [],
-        )
-      ]),
+      width: double.maxFinite,
+      height: 186,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        color: MyColors.white,
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xff1A1A1B).withOpacity(0.02),
+            spreadRadius: 0,
+            blurRadius: 32,
+            offset: const Offset(16, 16), // changes position of shadow
+          ),
+          BoxShadow(
+            color: const Color(0xff1A1A1B).withOpacity(0.04),
+            spreadRadius: 0,
+            blurRadius: 32,
+            offset: const Offset(16, 16), // changes position of shadow
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            '🤙🏻 최근 받은 제안',
+            style: MyTextStyle.CbS20W700,
+          ),
+          Column(
+            children: [
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/images/defaulfImg.png',
+                    width: 24,
+                    height: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    '게하총총 선배',
+                    style: MyTextStyle.CbS14W700,
+                  )
+                ],
+              ),
+              const SizedBox(height: 14),
+              Text(
+                '안녕하세요 성산 게하 창업 준비 중이시라니 반갑습니다. 전 성산 토박이입니다~ 몇년전 개인 사정으로 게하 사업은 그만두었어요ㅜㅜ 그래서 더 솔직하고 꾸밈 없이 게하 운영 노하우를 전달 드릴 수 있어요:)',
+                style: MyTextStyle.graySmallText,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 
-  Widget mentorInfo() {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Image.asset('assets/images/avatar.svg'),
-            Text(
-              '게하총총 선배',
-              style: MyTextStyle.CbS14W700,
-            )
-          ],
-        )
-      ],
+  Widget jejuSeniors() {
+    return Container(
+      width: double.maxFinite,
+      height: 320,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: MyColors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xff1A1A1B).withOpacity(0.02),
+            spreadRadius: 0,
+            blurRadius: 32,
+            offset: const Offset(16, 16), // changes position of shadow
+          ),
+          BoxShadow(
+            color: const Color(0xff1A1A1B).withOpacity(0.04),
+            spreadRadius: 0,
+            blurRadius: 32,
+            offset: const Offset(16, 16), // changes position of shadow
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          TextButton(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '😎 당신을 위한 제주 선배들',
+                  style: MyTextStyle.CbS20W700,
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: MyColors.gray500,
+                )
+              ],
+            ),
+            onPressed: () {},
+          ),
+          const SizedBox(height: 8),
+          SizedBox(
+            height: 52,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/defaulfImg.png',
+                  width: 36,
+                  height: 36,
+                ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      '홍제주',
+                      style: MyTextStyle.CbS16W700,
+                    ),
+                    const SizedBox(width: 16),
+                    Row(
+                      children: [
+                        _tag('숙박업'),
+                        const SizedBox(width: 4),
+                        _tag('애월')
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 52,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/defaulfImg.png',
+                  width: 36,
+                  height: 36,
+                ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      '한윤범',
+                      style: MyTextStyle.CbS16W700,
+                    ),
+                    const SizedBox(width: 16),
+                    Row(
+                      children: [
+                        _tag('숙박업'),
+                        const SizedBox(width: 4),
+                        _tag('제주시')
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 52,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/defaulfImg.png',
+                  width: 36,
+                  height: 36,
+                ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      '제주총총',
+                      style: MyTextStyle.CbS16W700,
+                    ),
+                    const SizedBox(width: 16),
+                    Row(
+                      children: [
+                        _tag('숙박업'),
+                        const SizedBox(width: 4),
+                        _tag('성산')
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 18),
+          Text(
+            '더보기',
+            style: MyTextStyle.CgS14W500,
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _tag(String tagName) {
+    return Container(
+      height: 22,
+      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 3.5),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: MyColors.gray500),
+      ),
+      child: Center(
+        child: Text(
+          tagName,
+          style: MyTextStyle.CgS12W500,
+        ),
+      ),
     );
   }
 }
