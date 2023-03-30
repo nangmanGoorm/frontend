@@ -1,10 +1,18 @@
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:goorm/consts/colors.dart';
 import 'package:goorm/onboarding/tutorial_screen.dart';
 
+import 'package:goorm/onboarding_screen.dart';
+import 'package:goorm/mentor/home.dart';
+
+
 void main() {
+
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -25,6 +33,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
+
       home: SafeArea(
         child: Scaffold(
           backgroundColor: MyColors.white,

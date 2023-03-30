@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "468294724245",
+    "project_id": "goorm-d57f7",
+    "storage_bucket": "goorm-d57f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468294724245:android:53251bb3c50d03f1cfc99c",
+        "android_client_info": {
+          "package_name": "com.example.goorm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468294724245-pqdd7h9iikea7mrenqm3tpnbt96aiuo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5sCqcH_xxLLZktBRyBDhhuE8SI9gJkhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468294724245-pqdd7h9iikea7mrenqm3tpnbt96aiuo8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
