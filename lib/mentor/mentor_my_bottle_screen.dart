@@ -82,19 +82,25 @@ class _MentorMyBottleScreenState extends State<MentorMyBottleScreen> {
       {
         'category': 0,
        'createdAt': DateTime.now().toString(),
-        'message': '안녕하세요 제주살이 새내기입니다. 시작할 때 어떤 것부터 시작할지 잘 모르겠어요. adsf',
+        'message': '어릴 때부터 게스트 하우스 차리는 게 꿈이었어요 자본금 5000만원을 모았는데 이 돈으로 게하 창업 가능할까요? 간절합니다 도와주세요 애월에 차리고 싶어요',
         'offer': 0
       },
       {
         'category': 2,
         'createdAt': DateTime.now().toString(),
-        'message': '안녕하세요 제주살이 새내기입니다. 시작할 때 어떤 것부터 시작할지 잘 모르겠어요. adsf',
+        'message': '제주 게하 스텝 2년차입니다! 이제 스텝은 그만하고 제 게하를 차리고 싶은데 사장님께서 게하 운영 비법은 꽁꽁 숨기고 안 알려주시네요ㅜㅜ 제 꿈을 이룰 수 있게 도와주세요',
         'offer': 1
       },
       {
         'category': 3,
         'createdAt': DateTime.now().toString(),
-        'message': '안녕하세요 제주살이 새내기입니다. 시작할 때 어떤 것부터 시작할지 잘 모르겠어요. adsf',
+        'message': '게스트 하우스 운영이 재밌어보여 무작정 적금 들고 제주로 내려왔네요 그런데 지금 빚만 2억이에요 어떻게 해야 게하로 수익을 낼 수 있을까요?',
+        'offer': 3
+      },
+      {
+        'category': 3,
+        'createdAt': DateTime.now().toString(),
+        'message': '이번이 진짜 마지막이다! 라는 심정으로 쪽지 보냅니다 게하 사장이라는 꿈만 가지고 2년 째 적자를 버티고 있어요 이대로라면 우리 가족 굶어 죽어요',
         'offer': 3
       },
     ]; //TODO: 여기 땡겨와야 함

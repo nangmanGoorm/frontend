@@ -48,12 +48,13 @@ class _MentorSeaBottleScreenState extends State<MentorSeaBottleScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(height: 30),
+                const SizedBox(height: 40),
                 _titleText(),
                 const SizedBox(height: 230),
                 _middleText(),
                 const SizedBox(height: 306),
                 _showMyBottleListButton(),
+                const SizedBox(height: 40),
                 const MentorMyBottomNavigationBar()
               ],
             ),
