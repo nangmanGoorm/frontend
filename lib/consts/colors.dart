@@ -37,4 +37,7 @@ class MyColors {
   static Color orange200 = const Color(0xffF3BC9E);
   static Color orange100 = const Color(0xffF9DECE);
   static Color orange50 = const Color(0xffFEF2EC);
+
+  //
+  static Color unselectedColor = const Color(0xff4D6EE9);
 }

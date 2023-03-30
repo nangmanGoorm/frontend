@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   socket_io_client: ^2.0.1
+  flutter_svg: ^2.0.4
   # get: 4.6.5
 
 dev_dependencies:
@@ -62,7 +63,10 @@ flutter:
   assets:
     - assets/images/needHelp.png
     - assets/images/wantToHelp.png
-
+    - assets/images/BGdriftbottle.svg
+    - assets/images/BGdriftbottle.jpg
+    - assets/images/drift_bottle.svg
+    - assets/images/BGdriftbottle_with_bottle.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
