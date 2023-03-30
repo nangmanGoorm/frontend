@@ -70,7 +70,7 @@ class _CategorySelectScreenState extends State<CategorySelectScreen> {
 
   Widget _titleText() {
     return Text(
-      '어떤 도움이\n필요하신가요?',
+      '어떤 분야의 도움이\n필요하신가요?',
       style: MyTextStyle.CwS28W700,
     );
   }
@@ -139,7 +139,8 @@ class _CategorySelectScreenState extends State<CategorySelectScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => const HelpMoreDetailScreen()),
+                builder: (context) =>
+                    HelpMoreDetailScreen(selectedCategory: selectedCategory!)),
           );
         },
         style: MyButtonStyle.nextButtonStyle,

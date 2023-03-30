@@ -40,6 +40,8 @@ dependencies:
   flutter_svg: ^2.0.4
   firebase_messaging: ^14.3.0
   flutter_local_notifications: ^13.0.0
+  lottie: ^2.3.1
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -81,7 +83,8 @@ flutter:
     - assets/images/unselected_request.svg
     - assets/images/avatar.svg
     - assets/images/goorm_logo.svg
-
+    - assets/DriftBottleVerticalMoving.json
+    - assets/images/wave.svg
     - assets/images/IconFish.png
     - assets/images/defaulfImg.png
   # An image asset can refer to one or more resolution-specific "variants", see

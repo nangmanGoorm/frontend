@@ -5,6 +5,7 @@ import 'package:goorm/mentee/category_select_screen.dart';
 import 'package:goorm/mentee/my_bottle_screen.dart';
 import 'package:goorm/widgets/bottom_navigation_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lottie/lottie.dart';
 
 class SeaBottleScreen extends StatefulWidget {
   const SeaBottleScreen({super.key});
@@ -26,18 +27,27 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
             ),
           ),
           Positioned(
-            left: 96,
-            bottom: 242,
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const CategorySelectScreen()),
-                );
-              },
-              child: SvgPicture.asset('assets/images/drift_bottle.svg'),
+            left: 118,
+            bottom: 258,
+            child: SizedBox(
+              width: 160,
+              height: 200,
+              child: TextButton(
+                child: Lottie.asset('assets/DriftBottleVerticalMoving.json'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CategorySelectScreen()),
+                  );
+                },
+              ),
             ),
+          ),
+          Positioned(
+            left: 96,
+            bottom: 222,
+            child: SvgPicture.asset('assets/images/wave.svg'),
           ),
           SizedBox(
             width: double.maxFinite,
@@ -73,7 +83,7 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
     return Text(
       '해류병을 눌러서\n도움을 요청해보세요',
       textAlign: TextAlign.center,
-      style: MyTextStyle.CwS18W700,
+      style: MyTextStyle.CwS18W700Large,
     );
   }
 

@@ -50,6 +50,13 @@ class MyTextStyle {
     // height: 1.2,
   );
 
+  static TextStyle CwS18W700Large = TextStyle(
+    color: MyColors.white,
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    height: 1.7,
+  );
+
   static TextStyle CwS16W600 = TextStyle(
     color: MyColors.white,
     fontSize: 16,
@@ -172,5 +179,4 @@ class MyTextStyle {
   //   fontWeight: FontWeight.w600,
   //   height: 1.2,
   // );
-
 }

@@ -3,12 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/button_style.dart';
-import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
 import 'package:goorm/mentee/send_draft_screen.dart';
+import 'package:http/http.dart' as http;
 
 class HelpMoreDetailScreen extends StatefulWidget {
-  const HelpMoreDetailScreen({super.key});
+  final num selectedCategory;
+  const HelpMoreDetailScreen({super.key, required this.selectedCategory});
 
   @override
   State<HelpMoreDetailScreen> createState() => _HelpMoreDetailScreen();
@@ -16,6 +17,18 @@ class HelpMoreDetailScreen extends StatefulWidget {
 
 class _HelpMoreDetailScreen extends State<HelpMoreDetailScreen> {
   num? selectedCategory;
+  final TextEditingController _controller = TextEditingController();
+
+  // @override
+  // void initState() {
+  //   _controller.addListener(_checkIfFieldsFilled);
+  // }
+
+  // @override
+  // void dispose() {
+  //   _controller.dispose();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +88,15 @@ class _HelpMoreDetailScreen extends State<HelpMoreDetailScreen> {
       width: double.infinity,
       height: 54,
       child: TextButton(
-        onPressed: () {
+        onPressed: () async {
+          // var url = Uri.https(
+          //     'http://k8s-jejuseni-alb-8e27d7eb9b-1856798335.ap-northeast-2.elb.amazonaws.com/',
+          //     'users/signup');
+          // var response =
+          //     await http.post(url, body: {
+          //       'nickname':
+          //     });
+          // print(response);
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const SendDraftScreen()),
@@ -96,6 +117,7 @@ class _HelpMoreDetailScreen extends State<HelpMoreDetailScreen> {
       height: 142,
       child: TextFormField(
         keyboardType: TextInputType.multiline,
+        controller: _controller,
         maxLines: 10,
         decoration: const InputDecoration(
           hintText: '예) 안녕하세요 제주살이 새내기입니다. 시작할 때 어떤 것부터 시작할지 잘 모르겠어요.',
