@@ -102,7 +102,7 @@ class UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
               context,
               MaterialPageRoute(
                 builder: (context) => isMentee!
-                    ? Home()
+                    ? const Home()
                     : const SeaBottleScreen(),
 
               ),

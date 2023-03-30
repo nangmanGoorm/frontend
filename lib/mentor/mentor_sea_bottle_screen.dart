@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/text_style.dart';
 import 'package:goorm/mentee/category_select_screen.dart';
-import 'package:goorm/mentor/home.dart';
+import 'package:goorm/mentee/my_bottle_screen.dart';
 import 'package:goorm/widgets/bottom_navigation_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:goorm/mentor/mentor_bottom_navigation.dart';
 
-class SeaBottleScreen extends StatefulWidget {
-  const SeaBottleScreen({super.key});
+class MentorSeaBottleScreen extends StatefulWidget {
+  const MentorSeaBottleScreen({super.key});
 
   @override
-  State<SeaBottleScreen> createState() => _SeaBottleScreenState();
+  State<MentorSeaBottleScreen> createState() => _MentorSeaBottleScreenState();
 }
 
-class _SeaBottleScreenState extends State<SeaBottleScreen> {
+class _MentorSeaBottleScreenState extends State<MentorSeaBottleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +53,7 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
                 _middleText(),
                 const SizedBox(height: 306),
                 _showMyBottleListButton(),
-                const SizedBox(height: 40),
-                const MyBottomNavigationBar()
+                const MentorMyBottomNavigationBar()
               ],
             ),
           ),
@@ -71,7 +71,7 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
 
   Widget _middleText() {
     return Text(
-      '해류병을 눌러서\n도움을 요청해보세요',
+      '해류병을 눌러서\n제 후배들에게 도움을 줄 수 있어요',
       textAlign: TextAlign.center,
       style: MyTextStyle.CwS18W700,
     );
@@ -83,12 +83,16 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
       height: 38,
       child: TextButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (c) => Region()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const MyBottleScreen(),
+            ),
+          );
         },
         style: MyButtonStyle.whiteBorder12,
         child: Text(
-          '도움을 기다리는 후배보기',
+          '도움을 기다리는 후배 보기',
           style: MyTextStyle.CwS14W700,
         ),
       ),
