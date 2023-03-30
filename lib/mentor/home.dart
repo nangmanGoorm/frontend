@@ -7,6 +7,7 @@ import 'package:goorm/mentor/profile.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
+
 // WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -81,16 +82,16 @@ class _HomeState extends State<Home> {
 }
 
 var homeTitle = Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
   children: [
     Container(
+      margin: EdgeInsets.fromLTRB(20.0, 36.0, 226.0, 9.0),
       child: const Text("제주선배이시군요!"),
     ),
     Container(
-      child: const Text("어떤일을"),
+      margin: EdgeInsets.fromLTRB(20.0, 0.0, 173.0, 33.0),
+      child: const Text("어떤일을\n하고 계신가요?"),
     ),
-    Container(
-      child: const Text("하고 계신가요?"),
-    )
   ],
 );
 
@@ -102,41 +103,44 @@ class Region extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          regionTitle,
-          TextField(
-            decoration: InputDecoration(
-              labelText: '이름',
-              hintText: '홍길동',
-              border: OutlineInputBorder(),
+          Container(
+            margin: EdgeInsets.fromLTRB(20, 36.0, 109.0, 66.0),
+            child: Text("제주의 어느 지역에서\n활동하시나요?",
+              style: TextStyle(
+                color: Color(0xFF1A1A1B),
+                fontSize: 28,
+              ),
             ),
-            onChanged: (String value) {
-              // 텍스트 값이 변경될 때마다 호출됨
-              print('현재 입력된 값: $value');
-            },
           ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (c) => Bottle()));
+          Container(
+            margin: EdgeInsets.fromLTRB(20, 0.0, 20.0, 0.0),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: '예) 애월',
+                border: OutlineInputBorder(),
+              ),
+              onChanged: (String value) {
+                print('현재 입력된 값: $value');
               },
-              child: Text("시작하기"))
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(20, 400, 20.0, 20.0),
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (c) => Bottle()));
+                },
+                child: Text("시작하기")),
+          )
         ],
       ),
     );
   }
 }
 
-var regionTitle = Column(
-  children: [
-    Container(
-      child: const Text("어느 지역에서"),
-    ),
-    Container(
-      child: const Text("활동하시나요?"),
-    ),
-  ],
-);
 
 class Bottle extends StatefulWidget {
   const Bottle({Key? key}) : super(key: key);
