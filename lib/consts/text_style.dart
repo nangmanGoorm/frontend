@@ -153,12 +153,12 @@ class MyTextStyle {
     fontWeight: FontWeight.w600,
     height: 1.2,
   );
-
-  static TextStyle CbS16W600 = TextStyle(
-    color: MyColors.black,
-    fontSize: 16,
-    fontWeight: FontWeight.w600,
-    height: 1.2,
-  );
+  //
+  // static TextStyle CbS16W600 = TextStyle(
+  //   color: MyColors.black,
+  //   fontSize: 16,
+  //   fontWeight: FontWeight.w600,
+  //   height: 1.2,
+  // );
 
 }
