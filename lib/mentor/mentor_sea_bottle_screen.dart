@@ -7,6 +7,7 @@ import 'package:goorm/mentor/mentor_my_bottle_screen.dart';
 import 'package:goorm/widgets/bottom_navigation_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/mentor/mentor_bottom_navigation.dart';
+import 'package:lottie/lottie.dart';
 
 class MentorSeaBottleScreen extends StatefulWidget {
   const MentorSeaBottleScreen({super.key});
@@ -28,17 +29,21 @@ class _MentorSeaBottleScreenState extends State<MentorSeaBottleScreen> {
             ),
           ),
           Positioned(
-            left: 96,
-            bottom: 242,
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MentorMyBottleScreen()),
-                );
-              },
-              child: SvgPicture.asset('assets/images/drift_bottle.svg'),
+            left: 118,
+            bottom: 258,
+            child: SizedBox(
+              width: 180,
+              height: 220,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MentorMyBottleScreen()),
+                  );
+                },
+                child: Lottie.asset('assets/DriftBottleVerticalMoving.json'),
+              ),
             ),
           ),
           SizedBox(
