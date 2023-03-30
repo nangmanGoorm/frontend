@@ -82,14 +82,14 @@ class _MentorMyBottomNavigationBarState extends State<MentorMyBottomNavigationBa
               // 채팅 화면으로 이동
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Profile()),
+                  MaterialPageRoute(builder: (context) => ChattingScreen()),
                 );
                 break;
               case 2:
               // 프로필 화면으로 이동
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ChattingScreen()),
+                  MaterialPageRoute(builder: (context) => Profile()),
                 );
                 break;
               default:
