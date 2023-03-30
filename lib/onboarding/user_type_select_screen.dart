@@ -7,6 +7,7 @@ import 'package:goorm/mentee/sea_bottle_screen.dart';
 import 'package:goorm/mentor/help.dart';
 import 'package:goorm/mentor/home.dart';
 import 'package:goorm/widgets/next_button.dart';
+import 'package:goorm/mentor/home.dart';
 
 class UserTypeSelectScreen extends StatefulWidget {
   const UserTypeSelectScreen({super.key});
@@ -100,8 +101,10 @@ class UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    isMentee! ? Help() : const SeaBottleScreen(),
+                builder: (context) => isMentee!
+                    ? Home()
+                    : const SeaBottleScreen(),
+
               ),
             );
           }
