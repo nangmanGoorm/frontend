@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/button_style.dart';
+import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
 import 'package:goorm/mentee/send_draft_screen.dart';
-import 'package:http/http.dart' as http;
 
 class HelpMoreDetailScreen extends StatefulWidget {
   final num selectedCategory;
@@ -33,12 +33,17 @@ class _HelpMoreDetailScreen extends State<HelpMoreDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      // appBar: AppBar(
-      //     leading: IconButton(
-      //         icon: Icon(Icons.arrow_back_ios_rounded), onPressed: () {
-
-      //       }),
-      //     backgroundColor: Colors.transparent),
+      appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_rounded,
+              color: MyColors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          backgroundColor: Colors.transparent),
       body: Stack(
         children: [
           Positioned.fill(
@@ -78,7 +83,7 @@ class _HelpMoreDetailScreen extends State<HelpMoreDetailScreen> {
 
   Widget _titleText() {
     return Text(
-      '더 자세하게\n알려주세요',
+      '제주선배에게\n보낼 고민을 적어보세요',
       style: MyTextStyle.CwS28W700,
     );
   }
@@ -113,7 +118,7 @@ class _HelpMoreDetailScreen extends State<HelpMoreDetailScreen> {
 
   Widget _textFormField() {
     return SizedBox(
-      width: 320,
+      width: double.maxFinite,
       height: 142,
       child: TextFormField(
         keyboardType: TextInputType.multiline,

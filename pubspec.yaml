@@ -93,6 +93,26 @@ flutter:
     - assets/images/IconBottle.png
     - assets/images/IconChat.png
     - assets/images/IconProfile.png
+    - assets/images/anything.svg
+    - assets/images/chat_blue.svg
+    - assets/images/chat_gray.svg
+    - assets/images/mysea_blue.svg
+    - assets/images/mysea_gray.svg
+    - assets/images/profile_blue.svg
+    - assets/images/IconBottleWhite.svg
+    - assets/images/IconChatWhite.svg
+    - assets/images/IconHouseWhite.svg
+    - assets/images/IconHouseBlue500.svg
+    - assets/images/IconBottleGray700.svg
+    - assets/images/IconHouseGray700.svg
+    - assets/images/IconChatGray.svg
+    - assets/images/IconHomeGray.svg
+    - assets/images/IconBottleBlack.svg
+    - assets/images/IconChatBlack.svg
+    - assets/images/IconHouseBlack.svg
+    - assets/images/IconProfileBlack.svg
+    - assets/images/myarticlelist.svg
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

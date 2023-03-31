@@ -18,7 +18,7 @@ class WhiteMentorMyBottomNavigationBar extends StatefulWidget {
 class _WhiteMentorMyBottomNavigationBarState
     extends State<WhiteMentorMyBottomNavigationBar> {
   int index = 1;
-  List<String> labelsList = ['도움요청', '홈', '채팅'];
+  List<String> labelsList = ['나의바다', '채팅', '프로필'];
   List<AssetImage> iconsList = [
     AssetImage('assets/images/IconBottle.png'),
     AssetImage('assets/images/IconChat.png'),
@@ -53,27 +53,27 @@ class _WhiteMentorMyBottomNavigationBarState
             BottomNavigationBarItem(
               icon: index == i
                   ? Container(
-                width: 36,
-                height: 36,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                child: ImageIcon(
-                  iconsList[i],
-                  color: MyColors.unselectedColor,
-                ),
-              )
+                      width: 36,
+                      height: 36,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: ImageIcon(
+                        iconsList[i],
+                        color: MyColors.unselectedColor,
+                      ),
+                    )
                   : Container(
-                width: 36,
-                height: 36,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                child: ImageIcon(
-                  iconsList[i],
-                  color: const Color(0xffBABABB),
-                ),
-              ),
+                      width: 36,
+                      height: 36,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: ImageIcon(
+                        iconsList[i],
+                        color: const Color(0xffBABABB),
+                      ),
+                    ),
               label: labelsList[i],
             ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
 import 'package:goorm/mentee/chatting_screen.dart';
@@ -17,11 +18,16 @@ class WhiteMyBottomNavigationBar extends StatefulWidget {
 class _WhiteMyBottomNavigationBarState
     extends State<WhiteMyBottomNavigationBar> {
   int index = 1;
-  List<String> labelsList = ['도움요청', '홈', '채팅'];
-  List<IconData> iconsList = [
-    Icons.speaker,
-    Icons.home,
-    Icons.chat,
+  List<String> labelsList = ['나의바다', '채팅', '프로필'];
+  List<SvgPicture> grayImagesList = [
+    SvgPicture.asset('assets/images/IconBottleBlack.svg'),
+    SvgPicture.asset('assets/images/IconChatBlack.svg'),
+    SvgPicture.asset('assets/images/IconProfileBlack.svg'),
+  ];
+  List<SvgPicture> blueImagesList = [
+    SvgPicture.asset('assets/images/mysea_blue.svg'),
+    SvgPicture.asset('assets/images/chat_blue.svg'),
+    SvgPicture.asset('assets/images/profile_blue.svg'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -57,20 +63,21 @@ class _WhiteMyBottomNavigationBarState
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
-                      child: Icon(
-                        iconsList[i],
-                        color: MyColors.unselectedColor,
-                      ),
-                    )
+                      child: SizedBox(
+                          width: 20, height: 20, child: blueImagesList[i]))
                   : Container(
                       width: 36,
                       height: 36,
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
-                      child: Icon(
-                        iconsList[i],
-                        color: const Color(0xffBABABB),
+                      child: SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: Opacity(
+                          child: grayImagesList[i],
+                          opacity: 0.3,
+                        ),
                       ),
                     ),
               label: labelsList[i],

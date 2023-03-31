@@ -12,7 +12,8 @@ class MentorHelpMoreDetailScreen extends StatefulWidget {
   const MentorHelpMoreDetailScreen({super.key});
 
   @override
-  State<MentorHelpMoreDetailScreen> createState() => _MentorHelpMoreDetailScreen();
+  State<MentorHelpMoreDetailScreen> createState() =>
+      _MentorHelpMoreDetailScreen();
 }
 
 class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
@@ -79,7 +80,8 @@ class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const MentorSendDraftScreen()),
+            MaterialPageRoute(
+                builder: (context) => const MentorSendDraftScreen()),
           );
         },
         style: MyButtonStyle.nextButtonStyle,
@@ -93,7 +95,7 @@ class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
 
   Widget _textFormField() {
     return SizedBox(
-      width: 320,
+      width: double.maxFinite,
       height: 142,
       child: TextFormField(
         keyboardType: TextInputType.multiline,

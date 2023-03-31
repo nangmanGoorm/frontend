@@ -12,6 +12,34 @@
 <path opacity="0.2" d="M308 604H400" stroke="white"/>
 <path opacity="0.2" d="M-20 625H72" stroke="white"/>
 <path opacity="0.2" d="M247 711H339" stroke="white"/>
+<circle cx="19.5" cy="419.415" r="0.5" fill="white"/>
+<circle cx="346.75" cy="413.415" r="0.5" fill="white"/>
+<circle cx="103.367" cy="59.875" r="2.125" fill="white"/>
+<circle cx="158.25" cy="149" r="1.5" fill="white"/>
+<circle cx="50.125" cy="185.5" r="1.5" fill="white"/>
+<circle cx="48.875" cy="276.5" r="1.5" fill="white"/>
+<circle cx="264.291" cy="91" r="0.5" fill="white"/>
+<circle cx="63.5" cy="117.5" r="0.5" fill="white"/>
+<circle cx="307.5" cy="238" r="0.5" fill="white"/>
+<circle cx="92.5" cy="219.5" r="0.5" fill="white"/>
+<circle cx="6" cy="227" r="0.5" fill="white"/>
+<circle cx="26.5" cy="18" r="0.5" fill="white"/>
+<circle cx="301" cy="22" r="0.5" fill="white"/>
+<circle cx="354" cy="75" r="0.5" fill="white"/>
+<circle cx="146" cy="22" r="0.5" fill="white"/>
+<circle cx="246" cy="207" r="0.5" fill="white"/>
+<circle cx="24.791" cy="349" r="0.5" fill="white"/>
+<circle cx="345.25" cy="165.5" r="1" fill="white"/>
+<circle cx="341.5" cy="311.533" r="1.5" fill="white"/>
+<circle cx="321" cy="391.784" r="2.125" fill="white"/>
+<path d="M120 183.75L120.225 184.441H120.951L120.363 184.868L120.588 185.559L120 185.132L119.412 185.559L119.637 184.868L119.049 184.441H119.775L120 183.75Z" fill="white"/>
+<path d="M188.667 55.75L188.891 56.441H189.618L189.03 56.868L189.255 57.559L188.667 57.132L188.079 57.559L188.303 56.868L187.716 56.441H188.442L188.667 55.75Z" fill="white"/>
+<path d="M323.125 210.25L323.35 210.941H324.076L323.488 211.368L323.713 212.059L323.125 211.632L322.537 212.059L322.762 211.368L322.174 210.941H322.9L323.125 210.25Z" fill="white"/>
+<path d="M67.625 322.25L67.8495 322.941H68.5761L67.9883 323.368L68.2128 324.059L67.625 323.632L67.0372 324.059L67.2617 323.368L66.6739 322.941H67.4005L67.625 322.25Z" fill="white"/>
+<path d="M321 344.099L321.225 344.79H321.951L321.363 345.218L321.588 345.909L321 345.481L320.412 345.909L320.637 345.218L320.049 344.79H320.775L321 344.099Z" fill="white"/>
+<path d="M194.5 220L194.725 220.691H195.451L194.863 221.118L195.088 221.809L194.5 221.382L193.912 221.809L194.137 221.118L193.549 220.691H194.275L194.5 220Z" fill="white"/>
+<circle cx="63.946" cy="5.1579" r="1" fill="white"/>
+<circle cx="160" cy="112.415" r="0.5" fill="white"/>
 </g>
 <defs>
 <clipPath id="clip0_76_3371">

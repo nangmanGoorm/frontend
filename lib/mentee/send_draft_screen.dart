@@ -6,6 +6,7 @@ import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/text_style.dart';
 import 'package:goorm/mentee/my_bottle_screen.dart';
 import 'package:goorm/widgets/bottom_navigation_bar.dart';
+import 'package:lottie/lottie.dart';
 
 class SendDraftScreen extends StatefulWidget {
   const SendDraftScreen({super.key});
@@ -15,6 +16,23 @@ class SendDraftScreen extends StatefulWidget {
 }
 
 class _SendDraftScreenState extends State<SendDraftScreen> {
+  double _xPosition = 86;
+  double _secondPosition = -250;
+
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 1)).then((value) {
+      setState(() {
+        _xPosition = 600;
+      });
+      Future.delayed(const Duration(seconds: 1), () {
+        setState(() {
+          _secondPosition = 86;
+        });
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,12 +44,33 @@ class _SendDraftScreenState extends State<SendDraftScreen> {
               fit: BoxFit.cover,
             ),
           ),
+          AnimatedPositioned(
+            duration: const Duration(seconds: 1, milliseconds: 200),
+            curve: Curves.easeInOutCubic,
+            left: _xPosition,
+            bottom: 252,
+            child: SizedBox(
+                width: 240,
+                height: 300,
+                child: Lottie.asset('assets/DriftBottleVerticalMoving.json')),
+          ),
+          AnimatedPositioned(
+            duration: const Duration(seconds: 1, milliseconds: 200),
+            curve: Curves.easeInOutCubic,
+            left: _secondPosition,
+            bottom: 252,
+            child: SizedBox(
+                width: 240,
+                height: 300,
+                child: Lottie.asset('assets/DriftBottleVerticalMoving.json')),
+          ),
           Positioned(
-            left: 96,
-            bottom: 242,
-            child: TextButton(
-              onPressed: () {},
-              child: SvgPicture.asset('assets/images/drift_bottle.svg'),
+            left: 50,
+            bottom: 0,
+            child: SizedBox(
+              width: double.maxFinite,
+              height: 300,
+              child: SvgPicture.asset('assets/images/wave.svg'),
             ),
           ),
           SizedBox(
@@ -66,8 +105,9 @@ class _SendDraftScreenState extends State<SendDraftScreen> {
 
   Widget _middleText() {
     return Text(
-      '(닉네임)님을 도와줄\n해류병을 잘 보냈어요!',
-      style: MyTextStyle.CwS18W700,
+      '희범님을 도와줄\n해류병을 잘 보냈어요!',
+      style: MyTextStyle.CwS18W700height,
+      textAlign: TextAlign.center,
     );
   }
 

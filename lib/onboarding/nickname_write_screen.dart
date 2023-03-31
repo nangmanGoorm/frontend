@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goorm/consts/button_style.dart';
+import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
 
 import 'package:goorm/onboarding/user_type_select_screen.dart';
@@ -13,6 +14,34 @@ class NicknameWriteScreen extends StatefulWidget {
 }
 
 class _NicknameWriteScreenState extends State<NicknameWriteScreen> {
+  final TextEditingController _controller = TextEditingController();
+  bool isTextFieldsFilled = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller.addListener(_checkIfFieldsFilled);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _checkIfFieldsFilled() {
+    if (_controller.text.length >= 2) {
+      setState(() {
+        isTextFieldsFilled = true;
+      });
+    } else {
+      setState(() {
+        isTextFieldsFilled = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -65,7 +94,10 @@ class _NicknameWriteScreenState extends State<NicknameWriteScreen> {
 
   Widget _nicknameFormField() {
     return TextFormField(
-      decoration: InputDecoration(hintText: '예) 애월'),
+      controller: _controller,
+      decoration: const InputDecoration(
+        hintText: '예) 희범',
+      ),
     );
   }
 
@@ -78,12 +110,13 @@ class _NicknameWriteScreenState extends State<NicknameWriteScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => const UserTypeSelectScreen()),
+                builder: (context) =>
+                    UserTypeSelectScreen(nickname: _controller.text)),
           );
-
-          //TODO: nuikname같이 넘기고
         },
-        style: MyButtonStyle.nextButtonStyle,
+        style: isTextFieldsFilled
+            ? MyButtonStyle.nextButtonStyle
+            : MyButtonStyle.nextButtonStyleDisabled,
         child: Text(
           '다음으로',
           style: MyTextStyle.CwS18W700,

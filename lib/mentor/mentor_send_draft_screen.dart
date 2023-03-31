@@ -8,6 +8,7 @@ import 'package:goorm/mentee/my_bottle_screen.dart';
 import 'package:goorm/mentor/mentor_bottom_navigation.dart';
 import 'package:goorm/mentor/mentor_my_bottle_screen.dart';
 import 'package:goorm/widgets/bottom_navigation_bar.dart';
+import 'package:lottie/lottie.dart';
 
 class MentorSendDraftScreen extends StatefulWidget {
   const MentorSendDraftScreen({super.key});
@@ -17,6 +18,23 @@ class MentorSendDraftScreen extends StatefulWidget {
 }
 
 class _MentorSendDraftScreenState extends State<MentorSendDraftScreen> {
+  double _xPosition = 86;
+  double _secondPosition = -250;
+
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 1)).then((value) {
+      setState(() {
+        _xPosition = 600;
+      });
+      Future.delayed(const Duration(seconds: 1), () {
+        setState(() {
+          _secondPosition = 86;
+        });
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,13 +46,39 @@ class _MentorSendDraftScreenState extends State<MentorSendDraftScreen> {
               fit: BoxFit.cover,
             ),
           ),
+          AnimatedPositioned(
+            duration: const Duration(seconds: 1, milliseconds: 200),
+            curve: Curves.easeInOutCubic,
+            left: _xPosition,
+            bottom: 252,
+            child: SizedBox(
+                width: 240,
+                height: 300,
+                child: Lottie.asset('assets/DriftBottleVerticalMoving.json')),
+          ),
+          AnimatedPositioned(
+            duration: const Duration(seconds: 1, milliseconds: 200),
+            curve: Curves.easeInOutCubic,
+            left: _secondPosition,
+            bottom: 252,
+            child: SizedBox(
+                width: 240,
+                height: 300,
+                child: Lottie.asset('assets/DriftBottleVerticalMoving.json')),
+          ),
+          Positioned(
+            left: 50,
+            bottom: 0,
+            child: SizedBox(
+              width: double.maxFinite,
+              height: 300,
+              child: SvgPicture.asset('assets/images/wave.svg'),
+            ),
+          ),
           Positioned(
             left: 96,
-            bottom: 242,
-            child: TextButton(
-              onPressed: () {},
-              child: SvgPicture.asset('assets/images/drift_bottle.svg'),
-            ),
+            bottom: 222,
+            child: SvgPicture.asset('assets/images/wave.svg'),
           ),
           SizedBox(
             width: double.maxFinite,
@@ -70,6 +114,7 @@ class _MentorSendDraftScreenState extends State<MentorSendDraftScreen> {
     return Text(
       '제주후배에게\n해류병을 잘 보냈어요!',
       style: MyTextStyle.CwS18W700,
+      textAlign: TextAlign.center,
     );
   }
 

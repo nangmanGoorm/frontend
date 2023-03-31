@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:goorm/consts/button_style.dart';
+import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
 import 'package:goorm/mentee/sea_bottle_screen.dart';
 import 'package:goorm/mentor/help.dart';
@@ -10,7 +11,8 @@ import 'package:goorm/widgets/next_button.dart';
 import 'package:goorm/mentor/home.dart';
 
 class UserTypeSelectScreen extends StatefulWidget {
-  const UserTypeSelectScreen({super.key});
+  final String nickname;
+  const UserTypeSelectScreen({super.key, required this.nickname});
 
   @override
   State<UserTypeSelectScreen> createState() => UserTypeSelectScreenState();
@@ -18,13 +20,28 @@ class UserTypeSelectScreen extends StatefulWidget {
 
 class UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
   bool? isMentee;
+  String? nickname;
+
+  @override
+  void initState() {
+    nickname = widget.nickname;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: const Icon(Icons.arrow_back_ios_rounded),
-        ),
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: MyColors.black,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            backgroundColor: Colors.transparent),
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -37,12 +54,8 @@ class UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
                   const SizedBox(height: 66),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _selectButton(Image.asset('assets/images/needHelp.png'),
-                          '선배의 도움이\n필요해요', false),
-                      _selectButton(Image.asset('assets/images/wantToHelp.png'),
-                          '후배에게\n도움을 줄래요', true)
-                    ],
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [_selectJuniorButton(), _selectSeniorButton()],
                   ),
                 ],
               ),
@@ -56,35 +69,77 @@ class UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
 
   Widget _bigText() {
     return Text(
-      '어떤 도움이\n필요하신가요?',
+      nickname != null ? '$nickname님은\n어떤 사람인가요?' : '회원님은 어떤 사람인가요?',
       style: MyTextStyle.CbS28W700,
     );
   }
 
-  Widget _selectButton(Image image, String buttonText, bool _isMentee) {
+  Widget _selectJuniorButton() {
     return SizedBox(
-      width: 154,
-      height: 300,
+      width: 170,
+      height: 320,
       child: TextButton(
-        style: isMentee == _isMentee && isMentee != null
+        style: isMentee != null && isMentee == true
             ? MyButtonStyle.roleSelectButtonEnabled
             : MyButtonStyle.roleSelectButtonDisabled,
         onPressed: () {
           setState(() {
-            isMentee = _isMentee;
+            isMentee = true;
           });
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            image,
+            Image.asset('assets/images/needHelp.png'),
             const SizedBox(height: 8),
             Text(
-              buttonText,
-              style: isMentee == _isMentee
+              '도움이 필요한',
+              style: isMentee == true
+                  ? MyTextStyle.CpS14W500
+                  : MyTextStyle.CgS14W500gray700,
+            ),
+            Text(
+              '제주후배',
+              style: isMentee == true
                   ? MyTextStyle.CpS18W700
                   : MyTextStyle.CgS18W700,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _selectSeniorButton() {
+    return SizedBox(
+      width: 170,
+      height: 320,
+      child: TextButton(
+        style: isMentee != null && isMentee == false
+            ? MyButtonStyle.roleSelectButtonEnabled
+            : MyButtonStyle.roleSelectButtonDisabled,
+        onPressed: () {
+          setState(() {
+            isMentee = false;
+          });
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/wantToHelp.png'),
+            const SizedBox(height: 8),
+            Text(
+              '도움을 주는',
+              style: isMentee == false
+                  ? MyTextStyle.CpS14W500
+                  : MyTextStyle.CgS14W500gray700,
             ),
+            Text(
+              '제주선배',
+              style: isMentee == false
+                  ? MyTextStyle.CpS18W700
+                  : MyTextStyle.CgS18W700,
+            )
           ],
         ),
       ),
@@ -100,18 +155,16 @@ class UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
           if (isMentee != null) {
             Navigator.push(
               context,
-              //TODO: nickanem이랑 type 같이 넘기기
-              //TODO: userId 캐시로 저장하고 있기
               MaterialPageRoute(
-                builder: (context) => isMentee!
-                    ? const Home()
-                    : const SeaBottleScreen(),
-
+                builder: (context) =>
+                    isMentee! ? const SeaBottleScreen() : const Home(),
               ),
             );
           }
         },
-        style: MyButtonStyle.nextButtonStyle,
+        style: isMentee == null
+            ? MyButtonStyle.nextButtonStyleDisabled
+            : MyButtonStyle.nextButtonStyle,
         child: Text(
           '제주선배 시작하기',
           style: MyTextStyle.CwS18W700,

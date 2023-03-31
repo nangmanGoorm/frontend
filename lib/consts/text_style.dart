@@ -50,6 +50,13 @@ class MyTextStyle {
     // height: 1.2,
   );
 
+  static TextStyle CwS18W700height = TextStyle(
+    color: MyColors.white,
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    height: 1.7,
+  );
+
   static TextStyle CwS18W700Large = TextStyle(
     color: MyColors.white,
     fontSize: 18,
@@ -126,7 +133,21 @@ class MyTextStyle {
     height: 1.2,
   );
 
+  static TextStyle CpS14W500 = TextStyle(
+    color: MyColors.blue500,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    height: 1.2,
+  );
+
   //gray
+  static TextStyle CgS18W500 = TextStyle(
+    color: MyColors.gray500,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    height: 1.2,
+  );
+
   static TextStyle CgS16W500 = TextStyle(
     color: MyColors.gray500,
     fontSize: 16,
@@ -143,6 +164,13 @@ class MyTextStyle {
 
   static TextStyle CgS14W500 = TextStyle(
     color: MyColors.gray500,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    height: 1.2,
+  );
+
+  static TextStyle CgS14W500gray700 = TextStyle(
+    color: MyColors.gray700,
     fontSize: 14,
     fontWeight: FontWeight.w500,
     height: 1.2,

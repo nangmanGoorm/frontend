@@ -7,6 +7,7 @@ import 'package:goorm/mentor/mentor_my_bottle_screen.dart';
 import 'package:goorm/widgets/bottom_navigation_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/mentor/mentor_bottom_navigation.dart';
+import 'package:lottie/lottie.dart';
 
 class MentorSeaBottleScreen extends StatefulWidget {
   const MentorSeaBottleScreen({super.key});
@@ -28,18 +29,27 @@ class _MentorSeaBottleScreenState extends State<MentorSeaBottleScreen> {
             ),
           ),
           Positioned(
-            left: 96,
-            bottom: 242,
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MentorMyBottleScreen()),
-                );
-              },
-              child: SvgPicture.asset('assets/images/drift_bottle.svg'),
+            left: 86,
+            bottom: 252,
+            child: SizedBox(
+              width: 240,
+              height: 300,
+              child: TextButton(
+                child: Lottie.asset('assets/DriftBottleVerticalMoving.json'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MentorMyBottleScreen()),
+                  );
+                },
+              ),
             ),
+          ),
+          Positioned(
+            left: 96,
+            bottom: 222,
+            child: SvgPicture.asset('assets/images/wave.svg'),
           ),
           SizedBox(
             width: double.maxFinite,
@@ -54,7 +64,7 @@ class _MentorSeaBottleScreenState extends State<MentorSeaBottleScreen> {
                 _middleText(),
                 const SizedBox(height: 306),
                 _showMyBottleListButton(),
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
                 const MentorMyBottomNavigationBar()
               ],
             ),
@@ -73,7 +83,7 @@ class _MentorSeaBottleScreenState extends State<MentorSeaBottleScreen> {
 
   Widget _middleText() {
     return Text(
-      '해류병을 눌러서\n제 후배들에게 도움을 줄 수 있어요',
+      '해류병을 눌러서\n제주 후배들에게 도움을 줄 수 있어요',
       textAlign: TextAlign.center,
       style: MyTextStyle.CwS18W700,
     );

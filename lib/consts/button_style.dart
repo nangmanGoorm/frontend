@@ -11,6 +11,15 @@ class MyButtonStyle {
     backgroundColor: MaterialStatePropertyAll(MyColors.blue500),
   );
 
+  static ButtonStyle nextButtonStyleDisabled = ButtonStyle(
+    shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
+    ),
+    backgroundColor: MaterialStatePropertyAll(MyColors.blue100),
+  );
+
   static ButtonStyle roleSelectButtonEnabled = ButtonStyle(
     shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
       RoundedRectangleBorder(

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 // import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'dart:ui';
@@ -21,7 +15,6 @@ import 'package:goorm/widgets/bottom_navigation_bar.dart';
 import 'package:goorm/mentor/mentor_sea_bottle_screen.dart';
 import 'package:goorm/mentor/region_setting.dart';
 
-
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -36,9 +29,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back_ios_rounded,
-            color: MyColors.white,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_rounded,
+              color: MyColors.black,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           backgroundColor: Colors.transparent),
       body: Stack(
@@ -65,7 +63,7 @@ class _HomeState extends State<Home> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 68),
-                Text("선배이시군요",style: MyTextStyle.CgS16W500),
+                Text("선배님이시군요!", style: MyTextStyle.CgS18W500),
                 const SizedBox(height: 9),
                 _titleText(),
                 const SizedBox(height: 38),
@@ -98,7 +96,7 @@ class _HomeState extends State<Home> {
       '프리랜서',
       '유통업'
     ];
-    List<AssetImage> categoryImage = [
+    List<AssetImage> categoryImage = const [
       AssetImage('assets/images/IconFarm.png'),
       AssetImage('assets/images/IconFish.png'),
       AssetImage('assets/images/IconCafe.png'),
@@ -160,8 +158,7 @@ class _HomeState extends State<Home> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => const Region()),
+            MaterialPageRoute(builder: (context) => const Region()),
           );
         },
         style: MyButtonStyle.nextButtonStyle,

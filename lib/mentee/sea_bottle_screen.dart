@@ -27,11 +27,11 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
             ),
           ),
           Positioned(
-            left: 118,
-            bottom: 258,
+            left: 86,
+            bottom: 252,
             child: SizedBox(
-              width: 160,
-              height: 200,
+              width: 240,
+              height: 300,
               child: TextButton(
                 child: Lottie.asset('assets/DriftBottleVerticalMoving.json'),
                 onPressed: () {
@@ -62,7 +62,7 @@ class _SeaBottleScreenState extends State<SeaBottleScreen> {
                 _middleText(),
                 const SizedBox(height: 306),
                 _showMyBottleListButton(),
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
                 const MyBottomNavigationBar()
               ],
             ),

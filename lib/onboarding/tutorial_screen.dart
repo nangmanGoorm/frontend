@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/text_style.dart';
 import 'package:goorm/onboarding/nickname_write_screen.dart';
@@ -29,6 +30,10 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   _bigText(),
                   const SizedBox(height: 25),
                   _smallText(),
+                  const SizedBox(height: 87),
+                  SvgPicture.asset(
+                    'assets/images/anything.svg',
+                  )
                 ],
               ),
               _nextButton()
@@ -42,14 +47,14 @@ class _TutorialScreenState extends State<TutorialScreen> {
 
   Widget _bigText() {
     return Text(
-      '제주 선배는\n이런 서비스입니다.',
+      '제주 선배에 오신 걸\n환영합니다!',
       style: MyTextStyle.CbS28W700,
     );
   }
 
   Widget _smallText() {
     return Text(
-      '제주 선배에 대한 설명을\n여기에 적어주세요.',
+      '제주 선배와 제주 새내기를 이어주는\n제주의 새로운 소통창구입니다!',
       style: MyTextStyle.CbS18W500,
     );
   }
@@ -68,7 +73,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
         },
         style: MyButtonStyle.nextButtonStyle,
         child: Text(
-          '다음으로',
+          '제주선배 시작하기',
           style: MyTextStyle.CwS18W700,
         ),
       ),
