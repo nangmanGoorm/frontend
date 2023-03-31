@@ -33,16 +33,16 @@ class _HomeScreenState extends State<HomeScreen> {
               jejuPolicy(),
               const SizedBox(height: 20),
               jejuSeniors(),
-              Container(
-                width: double.maxFinite,
-                alignment: Alignment.center,
-                child: const WhiteMyBottomNavigationBar(),
-              )
+              // Container(
+              //   width: double.maxFinite,
+              //   alignment: Alignment.center,
+              //   child: const WhiteMyBottomNavigationBar(),
+              // )
             ],
           ),
         ),
       ),
-      // bottomNavigationBar: WhiteMyBottomNavigationBar(),
+      bottomNavigationBar: WhiteMyBottomNavigationBar(),
     );
   }
 
@@ -159,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                'assets/images/policyImage.png',
+                  'assets/images/policyImage.png',
                   width: 72,
                   height: 72,
                 ),

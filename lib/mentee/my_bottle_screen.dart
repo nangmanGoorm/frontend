@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
+import 'package:goorm/mentee/my_bottle_detail.dart';
 import 'package:goorm/models/answer_model.dart';
 import 'package:goorm/models/bottle_model.dart';
 import 'package:goorm/models/user_model.dart';
@@ -62,9 +63,9 @@ class _MyBottleScreenState extends State<MyBottleScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                selectedBottleId != null
-                    ? _bottleDetail(selectedBottleId!)
-                    : _selectButtons(),
+                // selectedBottleId != null
+                //     ? _bottleDetail(selectedBottleId!)
+                _selectButtons(),
                 // const Spacer(),
                 // _nextButton()
               ],
@@ -79,22 +80,10 @@ class _MyBottleScreenState extends State<MyBottleScreen> {
     //TODO: category 개수도 여기서 잡아서 넣기
     List<Map<String, dynamic>> myBottles = [
       {
-        'category': 0,
-        'createdAt': DateTime.now().toString(),
-        'message': '안녕하세요 제주살이 새내기입니다. 시작할 때 어떤 것부터 시작할지 잘 모르겠어요. adsf',
-        'offer': 0
-      },
-      {
         'category': 2,
         'createdAt': DateTime.now().toString(),
         'message': '안녕하세요 제주살이 새내기입니다. 시작할 때 어떤 것부터 시작할지 잘 모르겠어요. adsf',
         'offer': 1
-      },
-      {
-        'category': 3,
-        'createdAt': DateTime.now().toString(),
-        'message': '안녕하세요 제주살이 새내기입니다. 시작할 때 어떤 것부터 시작할지 잘 모르겠어요. adsf',
-        'offer': 3
       },
     ]; //TODO: 여기 땡겨와야 함
     //TODO: 제안 받은것도 따로 땡겨와야 함
@@ -113,9 +102,15 @@ class _MyBottleScreenState extends State<MyBottleScreen> {
           Bottle bottleModel = Bottle.fromJson(myBottles[index]);
           return TextButton(
             onPressed: () {
-              setState(() {
-                selectedBottleId = index;
-              });
+              // setState(() {
+              //   selectedBottleId = index;
+              // });
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MyBottleDetail(),
+                ),
+              );
             },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -206,71 +201,72 @@ class _MyBottleScreenState extends State<MyBottleScreen> {
 
     Bottle bottleModel = Bottle.fromJson(bottleModelMap);
     // Answer answerModel = Answer.fromJson(answerModelMap);
-    return Column(
-      children: [
-        SizedBox(
-          width: double.maxFinite,
-          height: 221,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 68),
-              Text(
-                bottleModel.category!,
-                // selectedBottleId.toString(),
-                style: MyTextStyle.CwS28W700,
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  Text(
-                    bottleModel.createdAt.toString(),
-                    style: MyTextStyle.CgS14W500,
-                  ),
-                  Text(' | ', style: MyTextStyle.CgS14W500),
-                  Text('제안 ${bottleModel.offer}개', style: MyTextStyle.CgS14W500)
-                ],
-              ),
-              const SizedBox(height: 8),
-              SizedBox(
-                width: double.maxFinite,
-                child: Text(
-                  bottleModel.message!,
-                  maxLines: 2,
-                  softWrap: false,
-                  style: MyTextStyle.listBuilderText,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 24),
-        ListView.separated(
-          // itemCount: answerModelList.length,
-          itemCount: 2,
-          separatorBuilder: (context, index) => Divider(
-            height: 1,
-            color: MyColors.gray900,
-          ),
-          itemBuilder: (context, index) {
-            return Text(
-              index.toString(),
-              style: TextStyle(color: Colors.red),
-            );
-            // Answer answerModel = Answer.fromJson(answerModelList[index]);
-            // // User userModel = User.fromJson(userModelList[index]);
-            // //TODO: answermodel의 user_id가지고 연결해야함
-            // // return mentorComments(answerModel);
-            // return Container(
-            //   width: 100,
-            //   height: 100,
-            //   decoration: BoxDecoration(color: Colors.white),
-            // );
-          },
-        ),
-      ],
-    );
+    // return Column(
+    //   children: [
+    //     SizedBox(
+    //       width: double.maxFinite,
+    //       height: 221,
+    //       child: Column(
+    //         crossAxisAlignment: CrossAxisAlignment.start,
+    //         children: [
+    //           const SizedBox(height: 68),
+    //           Text(
+    //             bottleModel.category!,
+    //             // selectedBottleId.toString(),
+    //             style: MyTextStyle.CwS28W700,
+    //           ),
+    //           const SizedBox(height: 8),
+    //           Row(
+    //             children: [
+    //               Text(
+    //                 bottleModel.createdAt.toString(),
+    //                 style: MyTextStyle.CgS14W500,
+    //               ),
+    //               Text(' | ', style: MyTextStyle.CgS14W500),
+    //               Text('제안 ${bottleModel.offer}개', style: MyTextStyle.CgS14W500)
+    //             ],
+    //           ),
+    //           const SizedBox(height: 8),
+    //           SizedBox(
+    //             width: double.maxFinite,
+    //             child: Text(
+    //               bottleModel.message!,
+    //               maxLines: 2,
+    //               softWrap: false,
+    //               style: MyTextStyle.listBuilderText,
+    //               overflow: TextOverflow.ellipsis,
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //     ),
+    //     const SizedBox(height: 24),
+    //     ListView.separated(
+    //       // itemCount: answerModelList.length,
+    //       itemCount: 2,
+    //       separatorBuilder: (context, index) => Divider(
+    //         height: 1,
+    //         color: MyColors.gray900,
+    //       ),
+    //       itemBuilder: (context, index) {
+    //         return Text(
+    //           index.toString(),
+    //           style: TextStyle(color: Colors.red),
+    //         );
+    //         // Answer answerModel = Answer.fromJson(answerModelList[index]);
+    //         // // User userModel = User.fromJson(userModelList[index]);
+    //         // //TODO: answermodel의 user_id가지고 연결해야함
+    //         // // return mentorComments(answerModel);
+    //         // return Container(
+    //         //   width: 100,
+    //         //   height: 100,
+    //         //   decoration: BoxDecoration(color: Colors.white),
+    //         // );
+    //       },
+    //     ),
+    //   ],
+    // );
+    return SvgPicture.asset('assets/images/myarticlelist.svg');
   }
 
   Widget mentorComments(answerModel) {
