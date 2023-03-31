@@ -66,7 +66,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-
     - assets/images/policyImage2.png
     - assets/images/policyImage3.png
     - assets/images/policyImage.png
@@ -137,6 +136,7 @@ flutter:
     - assets/images/IconHouseBlack.svg
     - assets/images/IconProfileBlack.svg
     - assets/images/myarticlelist.svg
+    - assets/images/myPostList.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

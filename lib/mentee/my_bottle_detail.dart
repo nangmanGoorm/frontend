@@ -10,8 +10,8 @@ class MyBottleDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned.fill(
-        child: SvgPicture.asset(
-      'assets/images/myarticlelist.svg',
+        child: Image.asset(
+      'assets/images/myPostList.png',
       fit: BoxFit.cover,
     ));
   }
