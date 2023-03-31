@@ -207,4 +207,18 @@ class MyTextStyle {
   //   fontWeight: FontWeight.w600,
   //   height: 1.2,
   // );
+
+  static TextStyle jobText = TextStyle(
+    color: MyColors.white,
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    height: 1.4,
+  );
+
+  static TextStyle CblueS16W600 = TextStyle(
+    color: MyColors.blue500,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    height: 1.2,
+  );
 }

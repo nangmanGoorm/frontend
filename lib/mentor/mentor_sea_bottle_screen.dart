@@ -36,6 +36,7 @@ class _MentorSeaBottleScreenState extends State<MentorSeaBottleScreen> {
               height: 300,
               child: TextButton(
                 child: Lottie.asset('assets/DriftBottleVerticalMoving.json'),
+
                 onPressed: () {
                   Navigator.push(
                     context,

@@ -96,15 +96,51 @@ class _HomeState extends State<Home> {
       '프리랜서',
       '유통업'
     ];
-    List<AssetImage> categoryImage = const [
-      AssetImage('assets/images/IconFarm.png'),
-      AssetImage('assets/images/IconFish.png'),
-      AssetImage('assets/images/IconCafe.png'),
-      AssetImage('assets/images/IconHouse.png'),
-      AssetImage('assets/images/IconRestaurant.png'),
-      AssetImage('assets/images/IconSelectshop.png'),
-      AssetImage('assets/images/IconFreelancer.png'),
-      AssetImage('assets/images/IconDistribution.png'),
+    // List<AssetImage> categoryImage = const [
+    //   AssetImage('assets/images/IconFarm.png'),
+    //   AssetImage('assets/images/IconFish.png'),
+    //   AssetImage('assets/images/IconCafe.png'),
+    //   AssetImage('assets/images/IconHouse.png'),
+    //   AssetImage('assets/images/IconRestaurant.png'),
+    //   AssetImage('assets/images/IconSelectshop.png'),
+    //   AssetImage('assets/images/IconFreelancer.png'),
+    //   AssetImage('assets/images/IconDistribution.png'),
+    // ]
+    List<SvgPicture> categoryImage = [
+      SvgPicture.asset(
+          'assets/images/IconFarmGrey.svg'),
+      SvgPicture.asset(
+          'assets/images/IconFishGray700.svg'),
+      SvgPicture.asset(
+          'assets/images/IconCafeGray700.svg'),
+      SvgPicture.asset(
+          'assets/images/IconHouseGray700.svg'),
+      SvgPicture.asset(
+          'assets/images/IconRestaurantGray700.svg'),
+      SvgPicture.asset(
+          'assets/images/IconSelectshopGray700.svg'),
+      SvgPicture.asset(
+          'assets/images/IconFreelancerGray700.svg'),
+      SvgPicture.asset(
+          'assets/images/IconDistributionGray700.svg')
+    ];
+    List<SvgPicture> unSelectedCategoryImage = [
+      SvgPicture.asset(
+          'assets/images/IconFarmBlue.svg'),
+      SvgPicture.asset(
+          'assets/images/IconFishBlue500.svg'),
+      SvgPicture.asset(
+          'assets/images/IconCafeBlue500.svg'),
+      SvgPicture.asset(
+          'assets/images/IconHouseBlue500.svg'),
+      SvgPicture.asset(
+          'assets/images/IconRestaurantBlue500.svg'),
+      SvgPicture.asset(
+          'assets/images/IconSelectshopBlue500.svg'),
+      SvgPicture.asset(
+          'assets/images/IconFreelancerBlue500.svg'),
+      SvgPicture.asset(
+          'assets/images/IconDistributionBlue500.svg')
     ];
     return Container(
       width: double.maxFinite,
@@ -133,11 +169,16 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ImageIcon(
-                    categoryImage[index],
-                    color: MyColors.black,
-                  ),
-                  Text(
+                  selectedCategory == index
+                      ? unSelectedCategoryImage[index]
+                      : categoryImage[index]
+                  ,
+                  selectedCategory == index
+                      ? Text(
+                    categoryList[index],
+                    style: MyTextStyle.CblueS16W600,
+                  )
+                      : Text(
                     categoryList[index],
                     style: MyTextStyle.CbS16W600,
                   )

@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goorm/consts/button_style.dart';
 import 'package:goorm/consts/colors.dart';
 import 'package:goorm/consts/text_style.dart';
+import 'package:goorm/mentor/mentor_bottle.dart';
 import 'package:goorm/mentor/mentor_more_detail.dart';
 import 'package:goorm/models/answer_model.dart';
 import 'package:goorm/models/bottle_model.dart';
@@ -86,13 +87,13 @@ class _MentorMyBottleScreenState extends State<MentorMyBottleScreen> {
         'offer': 0
       },
       {
-        'category': 2,
+        'category': 1,
         'createdAt': DateTime.now().toString(),
         'message': '제주 게하 스텝 2년차입니다! 이제 스텝은 그만하고 제 게하를 차리고 싶은데 사장님께서 게하 운영 비법은 꽁꽁 숨기고 안 알려주시네요ㅜㅜ 제 꿈을 이룰 수 있게 도와주세요',
         'offer': 1
       },
       {
-        'category': 3,
+        'category': 2,
         'createdAt': DateTime.now().toString(),
         'message': '게스트 하우스 운영이 재밌어보여 무작정 적금 들고 제주로 내려왔네요 그런데 지금 빚만 2억이에요 어떻게 해야 게하로 수익을 낼 수 있을까요?',
         'offer': 3
@@ -108,7 +109,7 @@ class _MentorMyBottleScreenState extends State<MentorMyBottleScreen> {
 
     return Container(
       width: double.maxFinite,
-      height: 600,
+      height: 700,
       alignment: Alignment.topCenter,
       child: ListView.separated(
         itemCount: myBottles.length,
@@ -117,7 +118,7 @@ class _MentorMyBottleScreenState extends State<MentorMyBottleScreen> {
           color: MyColors.gray900,
         ),
         itemBuilder: (context, index) {
-          Bottle bottleModel = Bottle.fromJson(myBottles[index]);
+          MentorBottle bottleModel = MentorBottle.fromJson(myBottles[index]);
           return TextButton(
             onPressed: () {
               Navigator.push(
@@ -128,7 +129,7 @@ class _MentorMyBottleScreenState extends State<MentorMyBottleScreen> {
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 16),
               width: double.maxFinite,
-              height: 122,
+              height: 140,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -145,15 +146,24 @@ class _MentorMyBottleScreenState extends State<MentorMyBottleScreen> {
                         bottleModel.category!,
                         style: MyTextStyle.CwS18W700,
                       ),
+                      Container(
+                        margin: EdgeInsets.only(top: 1.0,bottom: 1.0),
+                        padding: EdgeInsets.fromLTRB(10.0, 4.0, 10.0, 4.0),
+                        child: Text("숙박업",style: MyTextStyle.jobText,),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
                       Row(
                         children: [
                           Text(
                             bottleModel.createdAt.toString(),
                             style: MyTextStyle.CgS12W500,
                           ),
-                          Text(' | ', style: MyTextStyle.CgS12W500),
-                          Text('제안 ${bottleModel.offer}개',
-                              style: MyTextStyle.CgS12W500)
                         ],
                       ),
                       SizedBox(

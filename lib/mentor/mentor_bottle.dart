@@ -1,22 +1,18 @@
-class Bottle {
+class MentorBottle {
   num? id;
   String? category;
   String? message;
   String? createdAt;
   num? offer;
 
-  Bottle({this.id, this.category, this.message, this.createdAt, this.offer});
+  MentorBottle({this.id, this.category, this.message, this.createdAt, this.offer});
 
   static String categoryNumToString(int categoryNum) {
     List<String> categoryString = [
-      '농사',
-      '카페&베이커리',
-      '숙박업',
-      '게하',
-      '식당',
-      '편집샵',
-      '프리랜서',
-      '유통업'
+      '재주샌애기',
+      '신애라',
+      '내꿈은 제주시장',
+      '이두산(애월게하)',
     ];
     return categoryString[categoryNum];
   }
@@ -31,8 +27,8 @@ class Bottle {
     return dataTimeString;
   }
 
-  factory Bottle.fromJson(Map<String, dynamic> parsedJson) {
-    return Bottle(
+  factory MentorBottle.fromJson(Map<String, dynamic> parsedJson) {
+    return MentorBottle(
       id: parsedJson['id'],
       category: categoryNumToString(parsedJson['category']),
       message: parsedJson['message'],

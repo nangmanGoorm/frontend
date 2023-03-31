@@ -97,7 +97,7 @@ class _WhiteMentorMyBottomNavigationBarState
                 builder: (context) => const MentorSeaBottleScreen(),
               ),
             );
-          } else if (index == 2) {
+          } else if (index == 1) {
             Navigator.push(
               context,
               MaterialPageRoute(

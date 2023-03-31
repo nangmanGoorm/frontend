@@ -66,6 +66,31 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+
+    - assets/images/policyImage2.png
+    - assets/images/policyImage3.png
+    - assets/images/policyImage.png
+    - assets/images/policyImage1.svg
+    - assets/images/policyImage2.svg
+    - assets/images/policyImage3.svg
+    - assets/images/IconDistributionBlue500.svg
+    - assets/images/IconDistributionGray700.svg
+    - assets/images/IconCafeBlue500.svg
+    - assets/images/IconCafeGray700.svg
+    - assets/images/IconFishBlue500.svg
+    - assets/images/IconFishGray700.svg
+    - assets/images/IconFreelancerBlue500.svg
+    - assets/images/IconFreelancerGray700.svg
+    - assets/images/IconHomeBlue500.svg
+    - assets/images/IconHomeGray700.svg
+    - assets/images/IconHouseBlue500.svg
+    - assets/images/IconHouseGray700.svg
+    - assets/images/IconRestaurantBlue500.svg
+    - assets/images/IconRestaurantGray700.svg
+    - assets/images/IconSelectshopBlue500.svg
+    - assets/images/IconSelectshopGray700.svg
+    - assets/images/IconFarmGrey.svg
+    - assets/images/IconFarmBlue.svg
     - assets/images/IconFarm.png
     - assets/images/IconCafe.png
     - assets/images/IconHouse.png

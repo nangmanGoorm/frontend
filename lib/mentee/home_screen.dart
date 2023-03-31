@@ -21,24 +21,28 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: MyColors.gray100,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 10),
-            headerLogo(),
-            const SizedBox(height: 20),
-            recentOffer(),
-            const SizedBox(height: 20),
-            jejuSeniors(),
-            const Spacer(),
-            Container(
-              width: double.maxFinite,
-              alignment: Alignment.center,
-              child: const WhiteMyBottomNavigationBar(),
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 10),
+              headerLogo(),
+              const SizedBox(height: 20),
+              recentOffer(),
+              const SizedBox(height: 20),
+              jejuPolicy(),
+              const SizedBox(height: 20),
+              jejuSeniors(),
+              Container(
+                width: double.maxFinite,
+                alignment: Alignment.center,
+                child: const WhiteMyBottomNavigationBar(),
+              )
+            ],
+          ),
         ),
       ),
+      // bottomNavigationBar: WhiteMyBottomNavigationBar(),
     );
   }
 
@@ -101,6 +105,152 @@ class _HomeScreenState extends State<HomeScreen> {
                 overflow: TextOverflow.ellipsis,
               )
             ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget jejuPolicy() {
+    return Container(
+      width: double.maxFinite,
+      height: 380,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: MyColors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xff1A1A1B).withOpacity(0.02),
+            spreadRadius: 0,
+            blurRadius: 32,
+            offset: const Offset(16, 16), // changes position of shadow
+          ),
+          BoxShadow(
+            color: const Color(0xff1A1A1B).withOpacity(0.04),
+            spreadRadius: 0,
+            blurRadius: 32,
+            offset: const Offset(16, 16), // changes position of shadow
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          TextButton(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '💸 제주 새내기를 위한 정책',
+                  style: MyTextStyle.CbS20W700,
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: MyColors.gray500,
+                )
+              ],
+            ),
+            onPressed: () {},
+          ),
+          const SizedBox(height: 8),
+          SizedBox(
+            height: 72,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                'assets/images/policyImage.png',
+                  width: 72,
+                  height: 72,
+                ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      '제주도 귀농귀촌 지원정책',
+                      style: MyTextStyle.CbS18W700,
+                    ),
+                    Text(
+                      '다양한작목의 재배실습 및 마케팅과 ...',
+                      style: MyTextStyle.CgS14W500,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 72,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/policyImage2.png',
+                  width: 72,
+                  height: 72,
+                ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      '[맛있는 땀방울] 제주시 귀농...',
+                      style: MyTextStyle.CbS18W700,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                    Text(
+                      '귀농 농업창업 및 주택구입 지원사업...',
+                      style: MyTextStyle.CgS14W500,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 72,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/policyImage3.png',
+                  width: 72,
+                  height: 72,
+                ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      '귀어 창업 및 주택구입 지원...',
+                      style: MyTextStyle.CbS18W700,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                    Text(
+                      '귀어 창업 및 주택구입 지원사업',
+                      style: MyTextStyle.CgS14W500,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 18),
+          Text(
+            '더보기',
+            style: MyTextStyle.CgS14W500,
           )
         ],
       ),
