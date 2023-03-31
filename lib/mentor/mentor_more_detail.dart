@@ -157,12 +157,10 @@ class _MentorHelpMoreDetailScreen extends State<MentorHelpMoreDetailScreen> {
   }
 
   Widget _textFormField() {
-    return SizedBox(
-      width: 320,
-      height: 142,
+    return Container(
       child: TextFormField(
         keyboardType: TextInputType.multiline,
-        maxLines: 10,
+        maxLines: 4,
         decoration: const InputDecoration(
           hintText: '후배들에게 하고 싶은 조언을 적어주세요!',
         ),
